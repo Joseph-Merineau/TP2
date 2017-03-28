@@ -19,9 +19,6 @@ MongoClient.connect('mongodb://127.0.0.1:27017/merineau_carnet_adresse', (err, d
 })
 
 
-
-
-
 app.get('/',  (req, res) => {
    console.log('la route route get / = ' + req.url)
  

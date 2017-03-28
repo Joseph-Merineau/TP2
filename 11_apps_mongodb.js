@@ -10,6 +10,8 @@ const ObjectID = require('mongodb').ObjectID;
 
 var db // variable qui contiendra le lien sur la BD
 
+var aClique = false;
+
 MongoClient.connect('mongodb://127.0.0.1:27017/carnet_adresse', (err, database) => {
   if (err) return console.log(err)
   db = database
@@ -42,11 +44,14 @@ app.get('/formulaire',  (req, res) => {
 
 // La fonction qui permet de sauvegarder une valeur
 app.post('/adresse',  (req, res) => {
-  db.collection('adresse').save(req.body, (err, result) => {
+  if(aClique == false){
+    db.collection('adresse').save(req.body, (err, result) => {
       if (err) return console.log(err)
       console.log('sauvegarder dans la BD')
       res.redirect('/')
     })
+    aClique = true;
+  }
 })
 
 
@@ -65,6 +70,7 @@ if (err) return console.log(err)
 
 // La fonction qui permet de modidier les valeurs
 app.post('/modifier/:id', (req, res) => {
+ aClique = false;
  var id = req.params.id
  console.log(id)
  console.log(req)

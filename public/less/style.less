@@ -1,13 +1,88 @@
+/* Regles pour reinitialiser le HTML */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+
+  vertical-align: baseline;
+}
+
+/* Regles HTML5 */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
 html{
 	background-color: grey;
 }
 
-ul{
-	display: block;
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
 }
 
-li{
+ul.adresse{
+	display: flex;
+	flex-wrap: wrap;
+	width: 90%;
+	margin: 0px auto;
+	height: 100%;
+	justify-content: space-around;
+	margin-top: 100px;
 
-	margin: 9;
-	display: block;
+	li.pathya{
+		
+		display: flex;
+		flex-wrap: nowrap;
+		width: 100%;
+		justify-content: space-around;
+		height: 35px;
+		border-bottom: 1px solid black;
+
+		div.tempo{
+			color: white;
+			font-size: 1.5em;
+		}
+	}
+
+	li.client{
+		width: 90%;
+		margin: 9px;
+		display: flex;
+		height: 50px;
+		justify-content: space-around;
+		background-color: #aaaaaa;
+
+		form{
+			display: flex;
+			justify-content: space-around;
+			width: 100%;
+
+			input{
+				display: flex;
+			}
+
+			div.lesBoutons{
+				width: 100px;
+				background-color: yellow;
+				display: flex;
+				flex-wrap: nowrap;
+
+				div.lea{
+					width: 50px;
+					height: 100%;
+					background-color: red;
+				}
+
+				button{
+					width: 50px;
+					height: 100%;
+					background-color: lime;
+				}
+			}
+		}
+	}
 }
+

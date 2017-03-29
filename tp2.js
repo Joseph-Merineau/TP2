@@ -10,13 +10,16 @@ const ObjectID = require('mongodb').ObjectID;
 
 var db // Variable qui contiendra le lien pour la BD
 
-var aClique = false;
+var aClique = false; // Variable qui permet d'empêcher la création de plusieurs données en même temps
 
 MongoClient.connect('mongodb://127.0.0.1:27017/carnet_adresse', (err, database) => {
-  if (err) return console.log(err)
+  // On retrourne un message d'erreur en cas d'erreur
+  if (err){  console.log(err)
+    return
+  }
   db = database
   app.listen(8081, () => {
-    console.log('Connexion à la BD et on écoute sur le port 8081')
+    console.log('Connexion à la base de données réussit sur le port 8081')
   })
 })
 
@@ -25,8 +28,10 @@ app.get('/',  (req, res) => {
    console.log('la route route get / = ' + req.url)
  
     var cursor = db.collection('adresse').find().toArray(function(err, resultat){
-       if (err) return console.log(err)
-    // renders index.ejs
+      // On retrourne un message d'erreur en cas d'erreur
+      if (err){  console.log(err)
+        return
+      }
     // affiche le contenu de la BD
     res.render('index.ejs', {adresse: resultat})
 
@@ -45,7 +50,10 @@ app.get('/formulaire',  (req, res) => {
 app.post('/adresse',  (req, res) => {
   if(aClique == false){
     db.collection('adresse').save(req.body, (err, result) => {
-      if (err) return console.log(err)
+      // On retrourne un message d'erreur en cas d'erreur
+      if (err){  console.log(err)
+        return
+      }
       console.log('sauvegarder dans la BD')
       res.redirect('/')
     })
@@ -64,10 +72,15 @@ app.post('/modifier/:id', (req, res) => {
   //console.log(adresse[i]._id.toString())
   .findOneAndUpdate({"_id": ObjectID(req.params.id)}, req.body ,(err, resultat) => {
 
-  //object.style.background = "yellow"
 
+  // code pour tester certains fonctionnalités non fonctionnelles.
+  //object.style.background = "yellow"
   //this.style.background = "yellow"
-if (err) return console.log(err)
+
+  // On retrourne un message d'erreur en cas d'erreur
+  if (err){  console.log(err)
+    return
+  }
   res.redirect('/')  // redirige vers la route qui affiche la collection
   })
 })
@@ -80,7 +93,10 @@ app.get('/detruire/:id', (req, res) => {
   db.collection('adresse')
   .findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
 
-if (err) return console.log(err)
+  // On retrourne un message d'erreur en cas d'erreur
+  if (err){  console.log(err)
+    return
+  }
   res.redirect('/')  // redirige vers la route qui affiche la collection
   })
 })

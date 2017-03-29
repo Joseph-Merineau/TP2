@@ -5,6 +5,10 @@
   <link href="css/style.css" rel="stylesheet">
   <title>MERINEAU TP2</title>
   <!--<script src="jquery-2.1.0.min.js"></script>-->
+  <script
+  src="https://code.jquery.com/jquery-2.1.0.min.js"
+  integrity="sha256-8oQ1OnzE2X9v4gpRVRMb1DWHoPHJilbur1LP9ykQ9H0="
+  crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/scripte.js"></script>
 </head>
 <body>
@@ -31,9 +35,9 @@
         <input type="text" placeholder="Prenom" name="prenom" value="<%= adresse[i].prenom %>">
         <input type="text" placeholder="Nom" name="nom" value="<%= adresse[i].nom %>">
         <input type="text" placeholder="Telephone" name="telephone" value="<%= adresse[i].telephone %>">
-        <%= adresse[i]._id.toString() %>
+        <p class="le_id"><%= adresse[i]._id.toString() %></p>
         <div class="lesBoutons">
-          <button type="submit" onclick="jaune()"></button>
+          <button type="submit" class="test-ajax" onclick="traiterRequest()"></button>
           <a <%= "href=detruire/"+adresse[i]._id.toString() %>><div class="lea"></div></a>
         </div>
       </form>

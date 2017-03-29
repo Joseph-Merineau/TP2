@@ -8,7 +8,7 @@ app.use(express.static('public'))  // pour utiliser le dossier public
 
 const ObjectID = require('mongodb').ObjectID;
 
-var db // variable qui contiendra le lien sur la BD
+var db // Variable qui contiendra le lien pour la BD
 
 var aClique = false;
 
@@ -31,7 +31,6 @@ app.get('/',  (req, res) => {
     res.render('index.ejs', {adresse: resultat})
 
     }) 
-    
 })
 
 
@@ -54,30 +53,34 @@ app.post('/adresse',  (req, res) => {
   }
 })
 
+// La fonction qui permet de modidier les valeurs
+app.post('/modifier/:id', (req, res) => {
+  aClique = false;
+  var id = req.params.id
 
-// La fonction qui permet de supprimer une valeur définitevement
-app.get('/detruire/:id', (req, res) => {
- var id = req.params.id
- console.log(id)
- db.collection('adresse')
- .findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
+  console.log(id)
+  console.log(req)
+  db.collection('adresse')
+  //console.log(adresse[i]._id.toString())
+  .findOneAndUpdate({"_id": ObjectID(req.params.id)}, req.body ,(err, resultat) => {
 
+  //object.style.background = "yellow"
+
+  //this.style.background = "yellow"
 if (err) return console.log(err)
- res.redirect('/')  // redirige vers la route qui affiche la collection
- })
+  res.redirect('/')  // redirige vers la route qui affiche la collection
+  })
 })
 
 
-// La fonction qui permet de modidier les valeurs
-app.post('/modifier/:id', (req, res) => {
- aClique = false;
- var id = req.params.id
- console.log(id)
- console.log(req)
- db.collection('adresse')
- .findOneAndUpdate({"_id": ObjectID(req.params.id)}, req.body ,(err, resultat) => {
+// La fonction qui permet de supprimer une valeur définitevement
+app.get('/detruire/:id', (req, res) => {
+  var id = req.params.id
+  console.log(id)
+  db.collection('adresse')
+  .findOneAndDelete({"_id": ObjectID(req.params.id)}, (err, resultat) => {
 
 if (err) return console.log(err)
- res.redirect('/')  // redirige vers la route qui affiche la collection
- })
+  res.redirect('/')  // redirige vers la route qui affiche la collection
+  })
 })

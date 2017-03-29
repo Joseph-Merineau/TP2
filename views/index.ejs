@@ -5,15 +5,15 @@
   <link href="css/style.css" rel="stylesheet">
   <title>MERINEAU TP2</title>
   <!--<script src="jquery-2.1.0.min.js"></script>-->
-  <!--<script type="text/javascript" src="js/11_apps_mongodb.js"></script>-->
+  <script type="text/javascript" src="js/scripte.js"></script>
 </head>
 <body>
-  TP2
-  
+
   <!--<form action="/adresse" method="POST">
     <button type="submit">Soumettre</button>
   </form>-->
 
+  <h1>MÉRINEAU - TP2</h1>
   <ul class="adresse">
     <li class="pathya">
       <div class="tempo">Nom</div>
@@ -33,7 +33,7 @@
         <input type="text" placeholder="Telephone" name="telephone" value="<%= adresse[i].telephone %>">
         <%= adresse[i]._id.toString() %>
         <div class="lesBoutons">
-          <button type="submit"></button>
+          <button type="submit" onclick="jaune()"></button>
           <a <%= "href=detruire/"+adresse[i]._id.toString() %>><div class="lea"></div></a>
         </div>
       </form>

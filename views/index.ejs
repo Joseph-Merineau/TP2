@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <link href="css/style.css" rel="stylesheet">
-  <title>MERINEAU - Mon Application</title>
+  <title>MERINEAU TP2</title>
   <!--<script src="jquery-2.1.0.min.js"></script>-->
   <!--<script type="text/javascript" src="js/11_apps_mongodb.js"></script>-->
 </head>
 <body>
-  Node.js, Express et MongoDB.
+  TP2
   
   <!--<form action="/adresse" method="POST">
     <button type="submit">Soumettre</button>
@@ -21,7 +21,7 @@
       <div class="tempo">Téléphone</div>
       <div class="tempo">_id</div>
       <form action="/adresse" method="POST">
-        <button type="submit">Soumettre</button>
+        <button type="submit"></button>
       </form>
     </li>
   <% for(var i=0; i<adresse.length; i++) {%>
@@ -33,11 +33,8 @@
         <input type="text" placeholder="Telephone" name="telephone" value="<%= adresse[i].telephone %>">
         <%= adresse[i]._id.toString() %>
         <div class="lesBoutons">
-          
-            <a <%= "href=detruire/"+adresse[i]._id.toString() %>><div class="lea">X</div></a>
-          
-          
-          <button type="submit">O</button>
+          <button type="submit"></button>
+          <a <%= "href=detruire/"+adresse[i]._id.toString() %>><div class="lea"></div></a>
         </div>
       </form>
     </li>

@@ -14,7 +14,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
 }
 
 html{
-	background-color: grey;
+	background-color: #6a97ff;
 }
 
 body{
@@ -36,24 +36,49 @@ ul.adresse{
 		
 		display: flex;
 		flex-wrap: nowrap;
-		width: 100%;
+		width: 94%;
 		justify-content: space-around;
-		height: 35px;
+		height: 50px;
 		border-bottom: 1px solid black;
 
 		div.tempo{
 			color: white;
 			font-size: 1.5em;
+			margin-bottom: 5px;
+		    border-bottom: 1px solid black;
+		    height: 60%;
+		    padding-top: 10px;
+		    width: 10%;
+		    text-align: center;
+		}
+
+		form{
+			display: flex;
+			width: 100px;
+			justify-content: center;
+
+			button{
+				width: 50px;
+				height: 100%;
+				background-color: transparent;
+				border: none;
+				background-image: url("../img/icone_02.png");
+				background-size: cover;
+				cursor: pointer;
+				margin-top: -6px;
+				padding: 0px;
+			}
 		}
 	}
 
 	li.client{
-		width: 90%;
+		width: 94%;
 		margin: 9px;
 		display: flex;
 		height: 50px;
 		justify-content: space-around;
-		background-color: #aaaaaa;
+		background-color: #dbe6ff;
+		border-bottom: 1px solid black;
 
 		form{
 			display: flex;
@@ -62,6 +87,7 @@ ul.adresse{
 
 			input{
 				display: flex;
+				width: 10%;
 			}
 
 			div.lesBoutons{
@@ -74,12 +100,26 @@ ul.adresse{
 					width: 50px;
 					height: 100%;
 					background-color: red;
+					background-image: url("../img/icone_01.png");
+					background-size: cover;
+				}
+
+				div.lea:hover{
+					background-color: brown;
 				}
 
 				button{
 					width: 50px;
 					height: 100%;
 					background-color: lime;
+					border:none;
+					background-image: url("../img/icone_00.png");
+					background-size: cover;
+				}
+
+				button:hover{
+					background-color: green;
+					cursor: pointer;
 				}
 			}
 		}

@@ -18,9 +18,8 @@ function jaune(elementID){
 
 
 
-var db // Variable qui contiendra le lien pour la BD
+//var db // Variable qui contiendra le lien pour la BD
 
-var aClique = false; // Variable qui permet d'empêcher la création de plusieurs données en même temps
 
 
 
@@ -43,9 +42,9 @@ xhr = new XMLHttpRequest();
 xhr.open('POST', "modifier", true);
 data = { 
 	"modif":{
-	"nom" : adresse[0].nom,
-	"prenom" : adresse[1].prenom,
-	"telephone" : adresse[2].telephone
+	"nom" : adresse[0].innerHTML,
+	"prenom" : adresse[1].innerHTML,
+	"telephone" : adresse[2].innerHTML
 	},
 	"_id" : adresse[3].id 
 }

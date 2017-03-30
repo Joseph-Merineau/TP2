@@ -88,6 +88,7 @@ app.post('/modifier/:id', (req, res) => {
 
 // La fonction qui permet de supprimer une valeur définitevement
 app.get('/detruire/:id', (req, res) => {
+  aClique = false;
   var id = req.params.id
   console.log(id)
   db.collection('adresse')

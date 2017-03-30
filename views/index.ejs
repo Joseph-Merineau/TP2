@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <link href="css/style.css" rel="stylesheet">
   <title>MERINEAU TP2</title>
-  <!--<script src="jquery-2.1.0.min.js"></script>-->
   <script
   src="https://code.jquery.com/jquery-2.1.0.min.js"
   integrity="sha256-8oQ1OnzE2X9v4gpRVRMb1DWHoPHJilbur1LP9ykQ9H0="
@@ -12,39 +11,40 @@
   <script type="text/javascript" src="js/scripte.js"></script>
 </head>
 <body>
-
-  <!--<form action="/adresse" method="POST">
-    <button type="submit">Soumettre</button>
-  </form>-->
-
   <h1>MÉRINEAU - TP2</h1>
   <ul class="adresse">
-    <li class="pathya">
-      <div class="tempo">Nom</div>
-      <div class="tempo">Prénom</div>
-      <div class="tempo">Téléphone</div>
-      <div class="tempo">_id</div>
+
+    <li class="les_titres">
+      <div class="un_titre">Nom</div>
+      <div class="un_titre">Prénom</div>
+      <div class="un_titre">Téléphone</div>
+      <div class="un_titre titre_id">_id</div>
       <form action="/adresse" method="POST">
         <button type="submit"></button>
       </form>
     </li>
+
   <% for(var i=0; i<adresse.length; i++) {%>
 
-    <li class="client">
+    <li class="contact">
       <form <%= "action=modifier/"+adresse[i]._id.toString() %> method="POST">
         <input type="text" placeholder="Prenom" name="prenom" value="<%= adresse[i].prenom %>">
         <input type="text" placeholder="Nom" name="nom" value="<%= adresse[i].nom %>">
         <input type="text" placeholder="Telephone" name="telephone" value="<%= adresse[i].telephone %>">
         <p class="le_id"><%= adresse[i]._id.toString() %></p>
+
         <div class="lesBoutons">
           <button type="submit" class="test-ajax" onclick="traiterRequest()"></button>
           <a <%= "href=detruire/"+adresse[i]._id.toString() %>><div class="lea"></div></a>
         </div>
+
       </form>
     </li>
+
   <% } %>
   </ul>
-  
-
+  <footer>
+    <p>Joseph Mérineau - Travail Pratique II - Programmation et veille technologique</p>
+  </footer>
 </body>
 </html>

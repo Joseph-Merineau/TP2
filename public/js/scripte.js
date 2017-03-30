@@ -18,6 +18,27 @@ function jaune(elementID){
 
 
 
+var db // Variable qui contiendra le lien pour la BD
+
+var aClique = false; // Variable qui permet d'empêcher la création de plusieurs données en même temps
+
+
+
+/*$.get('/',  (req, res) => {
+   console.log('la route route get / = ' + req.url)
+ 
+    var cursor = db.collection('adresse').find().toArray(function(err, resultat){
+      // On retrourne un message d'erreur en cas d'erreur
+      if (err){  console.log(err)
+        return
+      }
+    // affiche le contenu de la BD
+    res.render('index.ejs', {adresse: resultat})
+
+    }) 
+})*/
+
+
 xhr = new XMLHttpRequest();
 xhr.open('POST', "modifier", true);
 data = { 

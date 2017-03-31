@@ -46,7 +46,7 @@ data = {
 	"prenom" : adresse[1].innerHTML,
 	"telephone" : adresse[2].innerHTML
 	},
-	"_id" : adresse[3].id 
+	"_id" : adresse[3].innerHTML 
 }
 
 sData = JSON.stringify(data);

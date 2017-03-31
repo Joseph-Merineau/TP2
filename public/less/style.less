@@ -1,3 +1,182 @@
+/* Regles pour reinitialiser le HTML */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Arial;
+  vertical-align: baseline;
+}
+
+/* Regles HTML5 */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+  display: block;
+}
+
 html{
-	background-color: pink;
+	background-color: #6a97ff;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+}
+
+// MERINEAU - TP2
+h1{
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	-webkit-user-select: none;     
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	font-size: 2.2em;
+}
+
+ul.adresse{
+	display: flex;
+	flex-wrap: wrap;
+	width: 90%;
+	margin: 30px auto 50px;
+	height: 100%;
+	justify-content: space-around;
+
+	// Contenant pour afficher nom, prenom, telephone et _id
+	li.les_titres{
+		display: flex;
+		flex-wrap: nowrap;
+		width: 94%;
+		justify-content: space-around;
+		height: 50px;
+		border-bottom: 1px solid black;
+
+		// nom, prenom, telephone et _id
+		div.un_titre{
+			color: white;
+			font-size: 1.5em;
+			margin-bottom: 5px;
+		    border-bottom: 1px solid black;
+		    height: 60%;
+		    padding-top: 10px;
+		    width: 10%;
+		    text-align: center;
+			-webkit-user-select: none;     
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+			cursor: default;
+		}
+
+		div.titre_id{
+			width: 20%;
+		}
+
+		form{
+			display: flex;
+			width: 100px;
+			justify-content: center;
+
+			// Le bouton pour rajouter une ligne
+			button{
+				width: 50px;
+				height: 100%;
+				background-color: transparent;
+				border: none;
+				background-image: url("../img/icone_02.png");
+				background-size: cover;
+				cursor: pointer;
+				margin-top: -6px;
+				padding: 0px;
+			}
+		}
+	}
+
+	// Chacune des donnees dans la bd
+	li.contact{
+		width: 94%;
+		margin: 9px;
+		display: flex;
+		height: 50px;
+		justify-content: space-around;
+		background-color: #dbe6ff;
+		border-bottom: 1px solid black;
+
+		form{
+			display: flex;
+			justify-content: space-around;
+			width: 100%;
+
+			input{
+				display: flex;
+				width: 10%;
+			}
+
+			p.le_id{
+				-webkit-user-select: none;     
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+				cursor: default;
+				width: 20%;
+				background-color: #edf2ff;
+				padding-top: 15px;
+				text-align: center;
+			}
+
+			div.lesBoutons{
+				width: 100px;
+				display: flex;
+				flex-wrap: nowrap;
+
+				div.lea{
+					width: 50px;
+					height: 100%;
+					background-color: red;
+					background-image: url("../img/icone_01.png");
+					background-size: cover;
+				}
+
+				div.lea:hover{
+					background-color: brown;
+				}
+
+				button{
+					width: 50px;
+					height: 100%;
+					background-color: lime;
+					border:none;
+					background-image: url("../img/icone_00.png");
+					background-size: cover;
+				}
+
+				button:hover{
+					background-color: green;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+footer{
+	-webkit-user-select: none;     
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	cursor: default;
+	width: 100%;
+	color: white;
+	background-color: black;
+	text-align: center;
+	height: 30px;
+	padding-top: 10px;
+	font-size: 0.8em;
 }
